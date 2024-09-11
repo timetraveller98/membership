@@ -6,17 +6,8 @@ import toast from "react-hot-toast";
 import { MdSend } from "react-icons/md";
 import { Col, Container, Row } from 'react-bootstrap';
 
-interface Customer {
-  id?: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  contactNumber: string;
-  status: string;
-  membershipId: string;
-}
 
-const CustomerForm: React.FC<Customer> = () => {
+const CustomerForm = () => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
