@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://school:student123@cluster0.64833pk.mongodb.net/test"
+}
+
+model Membership {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  membershipType String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  customers   Customer[]
+}
+
+model Customer {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  firstName    String
+  lastName     String
+  email        String   @unique
+  contact String
+  status       String
+  membershipId String
+  membership   Membership @relation(fields: [membershipId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
