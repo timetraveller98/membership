@@ -25,6 +25,7 @@ export default function CreateMembership() {
     ) {
       return;
     }
+    try{
     let response = await fetch("/api/memberships", {
       method: "POST",
       body: JSON.stringify({ membershipType }),
@@ -37,12 +38,16 @@ export default function CreateMembership() {
     });
 
     const responseData = await response.json();
-
     if (response.ok) {
-      toast.success("Membershipt added");
+      toast.success("Membership added");
       router.push('/');
-    }else {
-      toast.error("Something went wrong");
+    } else {
+      const errorMessage = responseData.message || "An unexpected error occurred.";
+      toast.error(errorMessage);
+    }}
+    catch (error) {
+      console.error("Error:", error);
+      toast.error("Failed to add customer. Please try again later.");
     }
   }
 
