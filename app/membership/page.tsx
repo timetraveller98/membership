@@ -54,7 +54,7 @@ export default function CreateMembership() {
   return (
     <Container>
       <Row className='d-flex align-items-center justify-content-center my-5'>
-        <Col xs={4}>
+        <Col md={4}>
 
           <form className='border py-4 px-5 m-2 rounded bg-body shadow'>
           <div>
