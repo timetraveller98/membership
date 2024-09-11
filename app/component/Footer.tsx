@@ -61,7 +61,7 @@ Zirakpur, Punjab – 140603, India</li>
           </Col>
           <Col xs={12}>
             <hr />
-            <h6 className='fw-light' style={{ color: 'black', textAlign: 'center', marginTop: '10px', marginBottom: '10px' }}>Copyrights ©2000 etlhive.com all rights reserved.</h6>
+            <h6 className='fw-light' style={{ color: 'black', textAlign: 'center', marginTop: '10px', marginBottom: '10px' }}>Copyrights ©2000 antheminfotech all rights reserved.</h6>
           </Col>
 
         </Row>

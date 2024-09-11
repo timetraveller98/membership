@@ -79,6 +79,7 @@ const updateCustomer =(id: any)=>{
                     disableColumnFilter
                     disableColumnSelector
                     disableDensitySelector
+                    
                         rows={customerData}
                         columns={columns}
                         getRowId={(row) => row.id}
