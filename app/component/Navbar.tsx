@@ -25,11 +25,11 @@ const NavbarData = () => {
                 Add Customer
               </Nav.Link>
             </Link>
-            <Link href="/membership" passHref legacyBehavior>
+            {/* <Link href="/membership" passHref legacyBehavior>
               <Nav.Link style={{ textDecoration: 'none' }} onClick={closeNavbar}>
                 Add Membership
               </Nav.Link>
-            </Link>
+            </Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

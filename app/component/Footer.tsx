@@ -29,7 +29,7 @@ const Footer = () => {
           <ul className='mt-4'>
               <h5 className='fw-bold mb-4'>Company</h5> 
             <Link href={'/create'} className='text-decoration-none text-secondary'><li className='my-2'>Add Customer</li></Link>
-            <Link href={'/membership'} className='text-decoration-none text-secondary'><li className='my-2'>Add Membership</li></Link>
+            {/* <Link href={'/membership'} className='text-decoration-none text-secondary'><li className='my-2'>Add Membership</li></Link> */}
             
               </ul>
           </Col>
