@@ -114,16 +114,25 @@ export default function EditCustomer() {
       const response = await axios.put(`/api/customers/${params.id}`, {
         firstName, lastName, contact, membershipId, status, email
       });
-      if (response.status !== 200) {
+      if (response.status === 200) {
+        toast.success("Data updated successfully");
+        router.push('/');
+      } else {
         toast.error('Failed to update product');
-        return;
       }
-      router.push('/');
-      toast.success("data Updated");
-    } catch (error) {
-      toast.error("Failed to update");
-    }
-  };
+    } catch (error:any) {
+      if (error.response) {
+        const { status, data } = error.response;
+        if (status === 400 || status === 404 || status === 409 || status === 410) {
+          const errorMessage = data.message || "An unexpected error occurred.";
+          toast.error(errorMessage);
+        } else {
+          toast.error("Failed to update product");
+        }
+      } else {
+        toast.error("Failed to update");
+      }
+  }};
 
   return (
     <Container>

@@ -79,6 +79,7 @@ const CustomerForm = () => {
     setErrorEmail(email.trim() === "");
     setErrorContact(contact.trim() === "");
     setErrorStatus(status.trim() === "");
+
     if (
       firstName.trim() === "" ||
       lastName.trim() === "" ||
@@ -104,7 +105,11 @@ const CustomerForm = () => {
     if (response.ok) {
       toast.success("Customer added");
       router.push('/');
-    } else {
+    } else if (response.status === 400 || response.status === 404 || response.status === 409 || response.status === 410){
+      const errorMessage = responseData.message || "An unexpected error occurred.";
+      toast.error(errorMessage);
+    }
+    else {
       const errorMessage = responseData.message || "An unexpected error occurred.";
       toast.error(errorMessage);
     }}
@@ -208,6 +213,7 @@ const CustomerForm = () => {
           variant="contained"
           color="inherit"
           className="mt-4"
+         
           onClick={handleSubmit}
           endIcon={<MdSend />}
         >
